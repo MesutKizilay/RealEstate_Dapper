@@ -1,6 +1,7 @@
 ﻿namespace RealEstate_Dapper_Api.Dtos.CategoryDtos
 {
-	class CreateCategoryDto
+	public class CreateCategoryDto
 	{
-	}	
+        public string CategoryName { get; set; }
+    }	
 }
