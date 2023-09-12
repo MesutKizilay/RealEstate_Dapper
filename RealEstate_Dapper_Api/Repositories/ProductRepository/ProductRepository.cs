@@ -5,8 +5,9 @@ using RealEstate_Dapper_Api.Models.DapperContext;
 namespace RealEstate_Dapper_Api.Repositories.ProductRepository
 {
     public class ProductRepository : IProductRepository
-	{
+    {
         readonly Context _context;
+
         public ProductRepository(Context context)
         {
             _context = context;
@@ -24,7 +25,7 @@ namespace RealEstate_Dapper_Api.Repositories.ProductRepository
 
         public async Task<List<ResultProductWithCategoryDto>> GetAllProductWithCategory()
         {
-            string query = "Select p.Id,Title,Price,City,District,Name From Products p Inner Join Categories c on p.CategoryId=c.Id";
+            string query = "Select p.Id,Title,Price,City,District,Name as CategoryName From Products p Inner Join Categories c on p.CategoryId=c.Id";
             using (var connection = _context.CreateConnection())
             {
                 var values = await connection.QueryAsync<ResultProductWithCategoryDto>(query);

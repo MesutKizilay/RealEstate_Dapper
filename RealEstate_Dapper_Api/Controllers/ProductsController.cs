@@ -17,14 +17,14 @@ namespace RealEstate_Dapper_UI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllProduct()
         {
-            var values =await _productRepository.GetAllProduct();
+            var values = await _productRepository.GetAllProduct();
             return Ok(values);
         }
 
         [HttpGet("GetAllProductWithCategory")]
         public async Task<IActionResult> GetAllProductWithCategory()
         {
-            var values =await _productRepository.GetAllProductWithCategory();
+            var values = await _productRepository.GetAllProductWithCategory();
             return Ok(values);
         }
     }
